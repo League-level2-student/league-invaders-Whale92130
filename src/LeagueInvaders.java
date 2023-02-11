@@ -11,7 +11,7 @@ public class LeagueInvaders {
 			game.setup();
 		}
 		LeagueInvaders() {
-			this.gameFrame = new JFrame();;
+			this.gameFrame = new JFrame();
 			this.panel = new GamePanel();
 		}
 		 
@@ -20,5 +20,6 @@ public class LeagueInvaders {
 			gameFrame.setSize(WIDTH, HEIGHT);
 			gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			gameFrame.setVisible(true);
+			gameFrame.addKeyListener(panel);
 		}
 }
