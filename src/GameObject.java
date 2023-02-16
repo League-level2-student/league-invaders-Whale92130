@@ -4,12 +4,15 @@ public class GameObject {
 	 int y;
 	 int width;
 	 int height;
-	 int Speed =0;
+	 int speed =0;
 	 boolean isActive =true;
-	 GameObject() {
+	 GameObject(int x, int y, int width, int height) {
 		 this.x = x;
 		 this.y = y;
 		 this.width = width;
 		 this.height = height;
+	 }
+	 void Update () {
+		 
 	 }
 }
