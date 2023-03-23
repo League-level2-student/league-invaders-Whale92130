@@ -29,7 +29,9 @@ public class Projectile extends GameObject {
 	}
 
 	void update() {
-		y=-speed;
+		y = y-speed;
+		super.Update();
+
 	}
 	void draw(Graphics g) {
         g.setColor(Color.RED);

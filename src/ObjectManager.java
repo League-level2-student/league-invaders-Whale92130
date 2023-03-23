@@ -23,6 +23,7 @@ public class ObjectManager implements ActionListener {
 	}
 
 	void update() {
+		
 		for (int i = 0; i < aliens.size(); i++) {
 			aliens.get(i).update();
 			if (aliens.get(i).y > LeagueInvaders.HEIGHT) {
@@ -35,7 +36,6 @@ public class ObjectManager implements ActionListener {
 				projectiles.get(o).isActive = false;
 			}
 		}
-
 	}
 
 	void draw(Graphics g) {
@@ -61,10 +61,19 @@ public class ObjectManager implements ActionListener {
 			}
 		}
 	}
+	//rocket.collisionBox.intersects(alien.collisionBox)
+	void checkCollision() {
+		for (int i = 0; i < aliens.size(); i++) {
+			if (aliens.get(i).collisionBox.intersection(projectiles.get(i).collisionBox) != null) {
+				System.out.println("bro died");
+			}
+		}
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
+		System.out.println("actionPreformed1242342");
 		addAlien();
 	}
 }
