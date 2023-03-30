@@ -92,6 +92,17 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		}
 		
 		obManage.draw(g);
+		
+		if (ship.isActive == false) {
+			boolean hi = true;
+			while (hi == true) {
+			hi = false;
+			stopGame();
+			currentState = END;
+			}
+		}
+
+		
 	}
 
 	void drawEndState(Graphics g) {
@@ -118,16 +129,22 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		}
 
 	}
-
+	
+	
+	
 	void startGame() {
 		alienSpawn = new Timer(1000, obManage);
 		alienSpawn.start();
+		ship.isActive = true;
+		obManage.score =0;
 	}
 
 	void stopGame() {
 		alienSpawn.stop();
 		System.out.println("stop");
-		
+		ship.x = 250;
+		ship.y = 700;
+		obManage.clearAliens();
 	}
 
 	@Override
